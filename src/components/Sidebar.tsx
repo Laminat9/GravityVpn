@@ -34,8 +34,27 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {/* Top Header Logo */}
       <div>
         <div className="p-4 pb-4 flex items-center gap-3 border-b border-white/5">
-          <div className="w-8 h-8 rounded-[10px] bg-[#18191D] border border-white/10 flex items-center justify-center overflow-hidden shrink-0">
-            <img src="./assets/icon-256.png" className="w-full h-full object-contain" alt="Gravity" />
+          <div className="w-8 h-8 rounded-[10px] bg-[#18191D] border border-white/10 flex items-center justify-center p-1.5">
+            <svg viewBox="0 0 256 256" className="w-full h-full" fill="none">
+              <path
+                d="M 128 38 C 168 54, 196 60, 204 74 C 206 132, 178 184, 128 218 C 78 184, 50 132, 52 74 C 60 60, 88 54, 128 38 Z"
+                fill="#131417"
+                stroke="#D4D7DE"
+                strokeWidth="16"
+              />
+              <path
+                d="M 96 116 C 112 100, 128 100, 144 116 C 160 132, 176 132, 192 116"
+                stroke="#EDEDED"
+                strokeWidth="14"
+                strokeLinecap="round"
+              />
+              <path
+                d="M 80 148 C 100 128, 120 128, 140 148 C 160 168, 180 168, 200 148"
+                stroke="#8A8E99"
+                strokeWidth="14"
+                strokeLinecap="round"
+              />
+            </svg>
           </div>
           <div>
             <div className="flex items-center gap-1.5">

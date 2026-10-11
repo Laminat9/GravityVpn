@@ -180,7 +180,7 @@ function createWindow() {
     minHeight: 580,
     frame: false,
     titleBarStyle: 'hidden',
-    backgroundColor: '#0C0D0E',
+    backgroundColor: '#16171A',
     show: false,
     icon: iconPath,
     webPreferences: {

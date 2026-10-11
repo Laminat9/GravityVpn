@@ -33,8 +33,27 @@ export const TitleBar: React.FC = () => {
     <header className="h-9 w-full bg-[#0C0D0E] border-b border-white/5 flex items-center justify-between px-3 select-none app-drag-region z-50">
       {/* Brand logo & title */}
       <div className="flex items-center gap-2 app-no-drag">
-        <div className="w-4 h-4 rounded-[4px] overflow-hidden flex items-center justify-center shrink-0">
-          <img src="./assets/icon-256.png" className="w-full h-full object-contain" alt="Gravity" />
+        <div className="w-4 h-4 flex items-center justify-center">
+          <svg viewBox="0 0 256 256" className="w-4 h-4" fill="none">
+            <path
+              d="M 128 38 C 168 54, 196 60, 204 74 C 206 132, 178 184, 128 218 C 78 184, 50 132, 52 74 C 60 60, 88 54, 128 38 Z"
+              fill="#18191D"
+              stroke="#D4D7DE"
+              strokeWidth="16"
+            />
+            <path
+              d="M 96 118 C 112 102, 128 102, 144 118 C 160 134, 176 134, 192 118"
+              stroke="#EDEDED"
+              strokeWidth="14"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 80 148 C 100 128, 120 128, 140 148 C 160 168, 180 168, 200 148"
+              stroke="#9DA1AA"
+              strokeWidth="14"
+              strokeLinecap="round"
+            />
+          </svg>
         </div>
         <span className="text-xs font-semibold text-[#EDEDED] tracking-tight">
           Gravity
