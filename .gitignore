@@ -1,0 +1,79 @@
+# ==========================================
+# Gravity VPN & Proxy Client - .gitignore
+# ==========================================
+
+# 1. Private VPN Panel & Custom Sources (DO NOT COMMIT)
+mikan*/
+*mikan*
+SKill.md
+
+# 2. Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# 3. Build & Packaging Artifacts
+dist/
+dist-electron/
+release/
+build/
+out/
+*.exe
+*.msi
+*.zip
+*.tar.gz
+*.7z
+*.rar
+
+# 4. Core binaries (downloaded via `npm run download:core`)
+core/*
+!core/.gitkeep
+
+# 5. User Data, Device IDs, Local Configs & Subscriptions
+userData/
+*.local
+*.local.json
+device-id.json
+profiles.json
+settings.json
+config.yaml
+sub-*.yaml
+cache/
+tmp/
+temp/
+*.tmp
+*.bak
+
+# 6. Logs & Debug outputs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 7. Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# 8. IDE & Editor configurations
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 9. OS Metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# 10. Antigravity & Agent workspace configs
+.agents/
+.gemini/

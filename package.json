@@ -1,0 +1,90 @@
+{
+  "name": "gravity",
+  "productName": "Gravity",
+  "version": "1.0.0",
+  "description": "Gravity — современный прокси и VPN-клиент для Windows на базе ядра Mihomo",
+  "main": "dist-electron/main.js",
+  "author": "Gravity Team",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "download:core": "node scripts/download-mihomo.js",
+    "build:renderer": "vite build",
+    "build:electron": "node scripts/build-electron.js",
+    "build": "npm run build:renderer && npm run build:electron && electron-builder",
+    "build:portable": "npm run build:renderer && npm run build:electron && electron-builder --win portable",
+    "build:nsis": "npm run build:renderer && npm run build:electron && electron-builder --win nsis",
+    "pack": "npm run build:renderer && npm run build:electron && electron-builder --dir"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "lucide-react": "^1.16.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "esbuild": "^0.24.0",
+    "png-to-ico": "^2.1.8",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.gravity.vpn",
+    "productName": "Gravity",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "assets/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "core/mihomo.exe",
+        "to": "core/mihomo.exe"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Gravity"
+    },
+    "portable": {
+      "artifactName": "Gravity-Portable-${version}.exe"
+    }
+  }
+}
